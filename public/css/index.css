@@ -7,7 +7,7 @@
 
 /* Завдання №2 */
 
-.title:hover {
+.lesson-four-task-two .link:hover~.title {
     background-color: green;
 }
 
@@ -23,7 +23,6 @@
 .lesson-four-task-four>div#sidebar>a:link {
     color: white;
     background-color: red;
-
 }
 
 /* Завдання №5 */
