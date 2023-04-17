@@ -1,0 +1,12 @@
+{{#with data}}
+<div class="main_card">
+    <h2 class="card_header">{{name}}</h2>
+    <div class="card_body">
+        <p class="card_title">{{price}}<span class="card_title_duration">/ mo</span></p>
+        {{#each features}}
+        <p class="card_text">{{this}}</p>
+        {{/each}}
+        <button class="{{#if @first}}card_button_first{{else}}card_button{{/if}}">{{button}}</button>
+    </div>
+</div>
+{{/with}}
