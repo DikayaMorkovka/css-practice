@@ -1,78 +1,59 @@
 <div class="page">
-    <div class="page_content">
 
-        <header class="page_block">
-            <div class="header">
+    <header class="page_block">
+        <div class="header">
+            {{>logo}}
+            <nav class="header_nav">
+                {{>nav list=header}}
+            </nav>
+        </div>
+    </header>
+
+    <main class="page_block">
+
+        <div class="hero">
+            {{#with hero}}
+            <div class="section_hero">
+                <h1>{{title}}</h1>
+                <p>{{text}}</p>
+            </div>
+            <img src="{{photo}}" alt="image">
+            {{/with}}
+        </div>
+
+        <div class="section_featured">
+            {{#each blog}}
+            {{>cardFeatured photo=img heading=title info=text linkText=button linkUrl=href}}
+            {{/each}}
+        </div>
+
+        <div class="section_form">
+            {{#with form}}
+            <div class="card_form">
+                <h3>{{title}}</h3>
+                <p>{{info}}</p>
+            </div>
+            <button>
+                <a href="{{href}}">{{button}}</a>
+            </button>
+            {{/with}}
+        </div>
+
+    </main>
+
+    <footer class="page_block">
+        <div class="footer">
+            <div>
                 {{>logo}}
-                <nav class="header_nav">
-                    {{>nav list=header}}
-                </nav>
+                <span class="footer_copyright">Copyright 2023-2024</span>
             </div>
-        </header>
-
-        <section class="page_block">
-            <div class="hero">
-                {{#with hero}}
-                {{>hero title=title text=text}}
-                <button class="btn-hero"><a href="{{button.url}}">{{button.text}}</a></button>
-                {{/with}}
+            {{#each footer}}
+            <div>
+                <span class="footer_title">{{title}}</span>
+                {{>nav list=links isVertical=true}}
             </div>
-        </section>
+            {{/each}}
+        </div>
+    </footer>
 
-        <section class="page_block">
-            <div class="section-preview">
-                {{#each preview}}
-                {{>cardPreview data=this}}
-                {{/each}}
-            </div>
-        </section>
-
-        <main class="page_block">
-            <div class="main">
-
-                <div class="header-posts">
-                    <h2 class="list-title">List of posts</h2>
-                    <div>
-                        {{#each categories}}
-                        <button class="list-categories preview-category-{{id}}">{{text}}</button>
-                        {{/each}}
-                    </div>
-                </div>
-
-                <div class="posts">
-                    <div class="blogs">
-                        {{#each news}}
-                        {{>cardPost data=this}}
-                        {{/each}}
-                    </div>
-
-                    <div class="aside">
-                        <div class="about">
-                            <h3 class="about-title">About</h3>
-                            <p class="about-description">{{about}}</p>
-                        </div>
-                        {{>linkList data=social title="Social"}}
-                        {{>linkList data=archive title="Archives"}}
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <footer class="page_block">
-            <div class="footer">
-                <div>
-                    {{>logo}}
-                    <span class="footer_copyright">Copyright 2023-2024</span>
-                </div>
-                {{#each footer}}
-                <div>
-                    <span class="footer_title">{{title}}</span>
-                    {{>nav list=links isVertical=true}}
-                </div>
-                {{/each}}
-            </div>
-        </footer>
-
-    </div>
 </div>

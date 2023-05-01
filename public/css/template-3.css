@@ -61,11 +61,7 @@ main>div:not(:last-child) {
 .hero {
     display: flex;
     align-items: center;
-    gap: 80px;
-}
-
-.hero>img {
-    border-radius: 12px;
+    gap: 36px;
 }
 
 .section_hero :not(:last-child) {
@@ -74,7 +70,7 @@ main>div:not(:last-child) {
 
 .section_hero h1 {
     font-weight: 500;
-    font-size: 36px;
+    font-size: 50px;
     line-height: 120%;
     letter-spacing: -0.8px;
     color: #5A5A5A;
@@ -82,21 +78,9 @@ main>div:not(:last-child) {
 
 .section_hero p {
     line-height: 170%;
+    font-size: 20px;
     color: #5A5A5A;
-}
-
-.section_hero button>a {
-    background: #6C757D;
-    border: 1px solid #6C757D;
-    border-radius: 4px;
-    padding: 12px 16px;
-    align-items: center;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.section_hero button :hover {
-    background: #989fa5;
+    margin: 0;
 }
 
 .section_featured {
@@ -108,34 +92,49 @@ main>div:not(:last-child) {
 .card_featured {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px 26px;
-    gap: 24px;
-    flex-basis: 34%;
+    gap: 12px;
+}
+
+.card_featured img {
+    border-radius: 50%;
 }
 
 .card_featured h3 {
-    font-weight: 500;
-    font-size: 31px;
-    color: #212529;
+    font-size: 32px;
+    font-weight: 400;
+    color: #5A5A5A;
     margin: 0;
 }
 
 .card_featured p {
+    text-align: center;
     font-size: 16px;
-    line-height: 170%;
-    color: #212529;
+    line-height: 150%;
+    color: #5A5A5A;
     margin: 0;
 }
 
 .card_featured a {
-    color: rgba(13, 110, 253, 1);
+    padding: 12px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #6C757D;
+    border: 1px solid #6C757D;
+    border-radius: 4px;
+    text-decoration: none;
 }
 
+.card_featured a:hover {
+    background: #a1a9b0;
+}
 
-.section_actions {
+.section_form {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 24px;
     gap: 16px;
     background: #563D7C;
@@ -143,31 +142,29 @@ main>div:not(:last-child) {
     border-radius: 8px;
 }
 
-.card_actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.card_actions p {
+.card_form h3 {
     color: #FFFFFF;
-    font-size: 24px;
-    line-height: 16px;
-    margin: 0;
+    font-size: 27px;
+    margin-bottom: 12px;
 }
 
-.card_actions>button {
+.card_form p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.section_form>button {
     background: #FFFFFF;
     border-radius: 4.8px;
-    padding: 16px 74px;
+    padding: 12px 50px;
 }
 
-.card_actions>button:hover {
+.section_form>button:hover {
     background: #ffffff96;
 }
 
-.card_actions>button>a {
-    font-size: 20px;
+.section_form>button>a {
+    font-size: 18px;
     color: #212529;
     text-decoration: none;
 }
