@@ -1,0 +1,17 @@
+<header class="header">
+    {{#with header}}
+    <div class="top_header">
+        {{>logo}}
+        {{>nav list=links}}
+    </div>
+    <div class="bottom_header">
+        {{#with ad}}
+        <div class="left_part_bottom_header">
+            <span>Ad</span>
+            <p>{{text}}: <a href="{{url}}">{{url}}</a></p>
+        </div>
+        {{/with}}
+        <span>Users online: {{userOnline}}</span>
+    </div>
+    {{/with}}
+</header>
