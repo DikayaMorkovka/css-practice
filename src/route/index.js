@@ -1050,16 +1050,16 @@ router.get('/template-7', function (req, res) {
       copyright: "© Copyrights Shop 2022-2023. All rights reserved",
       pages: [
         {
-          path: "www.example.com/terms",
-          name: "Terms of Use"
+          url: "www.example.com/terms",
+          text: "Terms of Use"
         },
         {
-          path: "www.example.com/privacy",
-          name: "Privacy Policy"
+          url: "www.example.com/privacy",
+          text: "Privacy Policy"
         },
         {
-          path: "www.example.com/refund",
-          name: "Refund Policy"
+          url: "www.example.com/refund",
+          text: "Refund Policy"
         }
       ]
     }

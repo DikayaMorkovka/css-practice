@@ -1,4 +1,9 @@
-<div>
-    <h1 class="hero_title">{{title}}</h1>
-    <p class="hero_text">{{text}}</p>
-</div>
+<h1 class="hero_title">{{title}}</h1>
+<p class="hero_text">{{text}}</p>
+{{#if isBatton}}
+<button class="hero_button">
+    {{#with button}}
+    <a href="{{url}}">{{text}}</a>
+    {{/with}}
+</button>
+{{/if}}

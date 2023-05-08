@@ -3,66 +3,32 @@
 <main class="main">
 
     <section class="hero">
-        {{#with info}}
-        <div class="info">
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
-        </div>
-        {{/with}}
-
-        {{#with form}}
-        <div class="form">
-            <form>
-                <div class="form_group_inputs">
-                    {{#each inputs}}
-                    <input id="{{id}}" type="{{type}}" name="{{name}}" placeholder="{{placeholder}}">
-                    {{/each}}
-                </div>
-                <div class="form_group_checkbox">
-                    {{#with checkbox}}
-                    <input id="{{name}}" type="checkbox" name="{{name}}">
-                    <label for="{{name}}">{{label}}</label>
-                    {{/with}}
-                </div>
-                <input class="form_submit" type="submit" value="{{button}}">
-            </form>
-            <hr>
-            <p class="form_info">{{info}}</p>
-        </div>
-        {{/with}}
-
-    </section>
-
-    <section class="updates">
-        {{#with updates}}
-        <h2>{{title}}</h2>
-        {{#each list}}
-        <div class="updates_content">
-            <div class="user_img {{#if @first}}user_img_first{{/if}} {{#if @last}}user_img_last{{/if}}">32x32</div>
-            <span>{{nickname}}</span>
-            <p>{{description}}</p>
-        </div>
-        {{/each}}
-        <a href="{{show_all.url}}">{{show_all.text}}</a>
+        {{#with hero}}
+        {{>hero text=description isBatton=true}}
         {{/with}}
     </section>
 
-    <section class="expirience">
-        {{#with expirience}}
-        <div class="badge">{{badge}}</div>
-        <h2>{{title}}</h2>
-        <div class="feedback_content">
-            {{#each list}}
-            <div class="feedback">
-                <span>{{name}}</span>
-                <p>{{details}}</p>
-            </div>
+    <section class="about">
+        {{#with about}}
+        <h2>{{heading}}</h2>
+        <p>{{info}}</p>
+        {{/with}}
+    </section>
+
+    <section class="articles">
+        <div>
+            <h2>Our Articles</h2>
+            <button class="btn_viev_all">View All</button>
+        </div>
+        <div>
+            {{#each articles}}
+            {{>articleCardDark}}
             {{/each}}
         </div>
-        {{/with}}
-
     </section>
 
 </main>
 
-{{>footerDark}}
+{{#with footer}}
+{{>footerDark list=pages}}
+{{/with}}
