@@ -42,6 +42,13 @@
   .double_line {
     line-height: var(--line-height);
   }
+
+  .link {
+    color: #1264a3;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    font-size: var(--size-1);
+  }
 }
 
 @layer variant {
@@ -92,6 +99,7 @@
   --spacing-6: 28px;
   --spacing-7: 32px;
   --spacing-8: 36px;
+  --spacing-9: 40px;
 
   --size-1: 14px;
   --size-2: 18px;
@@ -176,13 +184,28 @@
   /* =================================== */
 
   .features_section {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 136px;
+    padding-bottom: 136px;
     display: grid;
     gap: var(--spacing-5);
     background-image: url(/img/feature.png);
     background-repeat: no-repeat;
     background-position: top right;
+  }
+
+  .features_section_second {
+    padding-top: 80px;
+    gap: 78px;
+    background-image: url(/img/what-you-need.png);
+    background-position: top left;
+    display: grid;
+    justify-items: end;
+    padding-left: 330px;
+  }
+
+  .feat_header {
+    display: grid;
+    gap: var(--spacing-5);
   }
 
   .features_title {
@@ -198,7 +221,7 @@
     box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
     background-color: var(--color-white);
     display: grid;
-    gap: var(--spacing-3);
+    gap: var(--spacing-2);
     color: #1d1c1d;
     grid-template-rows: min-content min-content 1fr min-content;
   }
@@ -216,6 +239,88 @@
 
   .feat_grid_4 > .feat_card:first-of-type {
     grid-row: 1/3;
+  }
+
+  .feat_grid_4_second {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .feat_grid_4_second > .feat_card:nth-of-type(2) {
+    grid-row: 1/3;
+  }
+
+  /* ==================================================== */
+
+  .customer_section {
+    padding-top: 72px;
+    padding-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-8);
+  }
+
+  .customer_content {
+    display: grid;
+    gap: 24px;
+    max-width: 433px;
+  }
+
+  .customer_description {
+    font-size: var(--size-5);
+  }
+
+  .deliveroo {
+    font-size: var(1);
+  }
+
+  /* ======================================= */
+
+  .articles_section {
+    padding-top: 107px;
+    padding-bottom: 80px;
+    display: grid;
+    justify-items: center;
+    gap: var(--spacing-9);
+    max-width: 100%;
+  }
+
+  .articles_title {
+    font-size: var(--size-5);
+  }
+
+  .articles {
+    display: flex;
+    gap: 75px;
+  }
+
+  .article {
+    display: grid;
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+    gap: var(--spacing-1);
+    width: min-content;
+    grid-template-rows: min-content 1fr min-content;
+  }
+
+  .article_content {
+    padding: var(--spacing-3) var(--spacing-2);
+  }
+
+  .article_title {
+    font-size: var(--size-1);
+    color: #454245;
+    letter-spacing: 0.1px;
+  }
+
+  .article_description {
+    font-size: var(--size-4);
+  }
+
+  .article_links {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-3) var(--spacing-2);
   }
 }
 
@@ -235,6 +340,12 @@
     .hero_image {
       top: 40px;
       height: 300px;
+    }
+    .features_section_second {
+      background-size: 45%;
+    }
+    .articles {
+      gap: var(--spacing-5);
     }
   }
 
@@ -268,18 +379,49 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
+    .features_section {
+      padding: 50px 0;
+    }
+
+    .features_section_second {
+      justify-items: flex-start;
+    }
+
     .feat_grid_4 > .feat_card:first-of-type {
       grid-row: 1/3;
     }
 
     .features_section {
       background-image: none;
+      padding: 50px 15px;
+    }
+
+    .customer_section {
+      display: grid;
+      justify-content: center;
+    }
+
+    .delivero_img {
+      width: 450px;
+    }
+
+    .articles {
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
   }
 
   @media all and (width < 600px) {
     .feat_grid_4 {
       grid-template-columns: 2fr 2fr;
+    }
+    .delivero_img {
+      width: 250px;
+      justify-self: center;
+    }
+
+    .articles {
+      gap: var(--spacing-5);
     }
   }
 
@@ -294,6 +436,10 @@
     }
     .feat_grid_4 {
       grid-template-columns: 1fr;
+    }
+
+    .feat_grid_4_second > .feat_card:nth-of-type(2) {
+      grid-row: auto;
     }
   }
 }
